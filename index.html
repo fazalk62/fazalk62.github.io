@@ -356,7 +356,7 @@ class Component extends DCLogic {
       wide: s.feedWide, narrow: !s.feedWide, wideExpanded: s.feedWide ? 'true' : 'false',
       wideLabel: s.feedWide ? 'Collapse evidence feed' : 'Expand evidence feed to 2 columns',
       toggleWide: () => this.setState({ feedWide: !this.state.feedWide }),
-      gridStyle: `flex:${s.feedWide ? '1 1 280px' : '999 1 600px'};min-width:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px`,
+      gridStyle: `flex:${s.feedWide ? '1 1 280px' : '999 1 600px'};min-width:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(max(260px,calc((100% - 12px) / 2)),1fr));gap:12px`,
       feedStyle: `flex:${s.feedWide ? '999 1 692px' : '1 1 340px'};min-width:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;flex-direction:column`,
       barStyle: `height:100%;width:${selAgents.length ? Math.round(doneCount / selAgents.length * 100) : 0}%;background:var(--accent);transition:width .3s`
     };
